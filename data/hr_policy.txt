@@ -1,0 +1,118 @@
+COMPANY HR POLICY HANDBOOK
+Acme Corp - Employee Handbook (Demo Document)
+
+1. LEAVE POLICY
+All full-time employees are entitled to 20 days of paid annual leave per calendar year.
+Leave requests must be submitted through the HR portal at least 5 working days in advance.
+Unused annual leave can be carried forward to the next year, up to a maximum of 5 days.
+Sick leave is separate from annual leave, and employees get 10 paid sick days per year.
+A medical certificate is required for sick leave longer than 2 consecutive days.
+
+2. WORK FROM HOME POLICY
+Employees may work from home up to 2 days per week, subject to manager approval.
+Fully remote work arrangements require written approval from the department head.
+Employees working from home must be reachable during core hours: 10 AM to 4 PM.
+
+3. PROBATION PERIOD
+All new employees undergo a probation period of 3 months from their date of joining.
+During probation, employees are not eligible for paid leave, but may take unpaid leave
+in case of emergencies, subject to manager approval.
+Performance is reviewed at the end of the probation period to confirm employment.
+
+4. NOTICE PERIOD
+Employees who wish to resign must serve a notice period of 30 days.
+During the probation period, the notice period is reduced to 15 days.
+The company may waive the notice period at its discretion, with full and final settlement
+processed within 45 days of the last working day.
+
+5. REIMBURSEMENT POLICY
+Employees can claim reimbursement for approved business expenses such as travel,
+client meals, and internet bills used for official work.
+All reimbursement claims must be submitted with valid bills within 30 days of the expense.
+Claims are processed within 10 working days after approval from the reporting manager.
+
+6. CODE OF CONDUCT
+Employees are expected to maintain professionalism and respect in the workplace.
+Harassment, discrimination, or any form of workplace misconduct will not be tolerated
+and may result in disciplinary action, including termination.
+All employees must complete an annual Code of Conduct training.
+
+7. HOLIDAYS
+The company observes 12 public holidays every year, as per the official holiday calendar
+published by HR at the start of each year.
+Employees working on a public holiday are eligible for compensatory leave.
+
+8. EXIT POLICY
+Upon resignation or termination, employees must complete a clearance process involving
+IT, Finance, and HR departments before their last working day.
+Full and final settlement, including any pending reimbursements and leave encashment,
+is processed within 45 days of the last working day.
+
+9. MATERNITY, PATERNITY AND PARENTAL LEAVE
+Female employees are entitled to 26 weeks of fully paid maternity leave for up to two surviving children.
+Maternity leave may be initiated up to 8 weeks prior to the expected delivery date.
+An additional 4 weeks of leave may be granted in case of medical complications certified by a registered medical practitioner.
+Male employees are entitled to 2 weeks (10 working days) of paid paternity leave, which must be availed within 6 months of childbirth.
+Employees legally adopting a child under 1 year of age are entitled to 12 weeks of paid adoption leave.
+
+10. BEREAVEMENT AND COMPASSIONATE LEAVE
+Employees are eligible for up to 5 consecutive working days of paid bereavement leave upon the death of an immediate family member (spouse, child, parent, or sibling).
+Up to 2 days of paid compassionate leave are provided for extended family members (grandparents or parents-in-law).
+Additional unpaid time off may be requested through the reporting manager if travel is required.
+
+11. HEALTH INSURANCE AND MEDICAL BENEFITS
+All full-time employees are covered under the company group health insurance policy from day one of employment.
+The standard policy covers hospitalization expenses up to $50,000 (or equivalent local currency) per family unit (employee, spouse, and up to two dependent children).
+The company provides an annual health check-up allowance of up to $200 per employee.
+Employees also have free, 24/7 access to the Employee Assistance Program (EAP) for confidential mental health and counseling support.
+
+12. WORKING HOURS, ATTENDANCE AND OVERTIME
+The standard working schedule is 40 hours per week, Monday through Friday, 9:00 AM to 6:00 PM, including a 1-hour lunch break.
+Core collaboration hours during which all team members must be available online or in person are 10:00 AM to 4:00 PM.
+Overtime for eligible non-exempt roles requires prior written approval from the department head and is compensated at 1.5 times the regular hourly wage or as compensatory off days.
+
+13. LEARNING, DEVELOPMENT AND TUITION REIMBURSEMENT
+The company encourages continuous education and allocates an annual professional development budget of up to $1,000 per employee.
+Eligible expenses include technical certifications, professional conferences, online course subscriptions, and industry workshops.
+Requests must be submitted to HR with manager endorsement at least 14 days prior to course registration.
+Employees who leave the company within 6 months of completing a sponsored certification may be required to refund the certification fees.
+
+14. PERFORMANCE APPRAISAL AND PROMOTION POLICY
+Formal performance appraisals occur twice a year: a mid-year check-in in June and an annual evaluation in December.
+Performance is evaluated on a 5-point scale (1 - Unsatisfactory, 2 - Needs Improvement, 3 - Meets Expectations, 4 - Exceeds Expectations, 5 - Outstanding).
+Employees who receive a rating of 2 or below will be placed on a 60-day Performance Improvement Plan (PIP).
+Promotions and salary revisions become effective on April 1st following the annual review cycle.
+
+15. DRESS CODE AND WORKPLACE ATTIRE
+The workplace follows a smart-casual dress code from Monday through Thursday.
+Casual attire (such as clean jeans and casual shirts) is permitted on Fridays. Ripped clothing, athletic gym wear, beach sandals, and offensive graphic shirts are not permitted at any time.
+Business formal attire is mandatory when meeting clients, external stakeholders, or attending official board meetings.
+
+16. IT ASSETS, DATA PRIVACY AND CYBERSECURITY
+Laptops, peripherals, and software licenses provided by Acme Corp are company property and must be used solely for legitimate business purposes.
+Employees must enable multi-factor authentication (MFA) on all company accounts and lock their workstations whenever leaving their desks.
+Installing unauthorized or pirated software is strictly prohibited and subject to immediate disciplinary inquiry.
+Loss or theft of any company IT device must be reported to the IT Helpdesk and Security Officer within 2 hours of discovery.
+
+17. ANTI-HARASSMENT, POSH AND GRIEVANCE REDRESSAL
+Acme Corp enforces a zero-tolerance policy towards sexual harassment, discrimination based on gender, race, religion, or sexual orientation, and workplace bullying.
+An Internal Complaints Committee (ICC) oversees all POSH (Prevention of Sexual Harassment) complaints.
+Any grievance submitted to the committee is reviewed with strict confidentiality, and inquiry proceedings must conclude within 90 days of filing.
+Retaliation against any employee who files a good-faith complaint or assists in an inquiry is strictly prohibited and results in immediate dismissal.
+
+18. MOONLIGHTING AND CONFLICT OF INTEREST
+Full-time employees must devote their complete professional attention to Acme Corp during business hours and may not engage in secondary commercial employment or freelance work for competing entities.
+Passive personal investments and non-profit volunteer activities outside working hours are permitted, provided they do not interfere with job responsibilities or present a conflict of interest.
+Any external consulting, board directorship, or intellectual property creation requires prior written disclosure and written sign-off from the HR department and Legal team.
+
+19. BUSINESS TRAVEL AND PER DIEM POLICY
+All domestic and international business travel must be pre-approved by the department head and booked through the corporate travel desk.
+Flight travel is permitted in economy class for all domestic trips and flights under 8 hours duration.
+Employees traveling for outstation business receive a daily meals allowance (per diem) of up to $75 per day.
+Incidental expenses such as airport taxis and business internet can be claimed with itemized receipts under the standard reimbursement policy.
+
+20. EMPLOYEE REFERRAL BONUS PROGRAM
+Employees who refer candidates who are subsequently hired and successfully complete their 3-month probation period receive an employee referral bonus.
+Referral bonus amounts are: $1,000 for junior to mid-level roles, and $2,500 for senior or specialized technical roles.
+Referral bonuses are disbursed in the payroll cycle immediately following the new hire's probation completion date.
+Members of the Talent Acquisition team and hiring managers for their own open positions are not eligible for the referral bonus.

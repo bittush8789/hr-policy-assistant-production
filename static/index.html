@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HR Policy Assistant - AI Chat</title>
+  <meta name="description" content="ChatGPT-style AI Assistant for Acme Corp HR Policy Handbook. Ask about leave, benefits, working hours, and conduct.">
+  
+  <!-- Modern Google Font: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons & Marked for Markdown parsing -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="dark-theme">
+  <div class="app-container">
+    
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <button class="new-chat-btn" id="newChatBtn" title="Start New Chat">
+          <i data-lucide="plus"></i>
+          <span>New chat</span>
+        </button>
+        <button class="icon-btn sidebar-close-btn" id="closeSidebarBtn" title="Close sidebar">
+          <i data-lucide="panel-left-close"></i>
+        </button>
+      </div>
+
+      <!-- Quick Policy Topics -->
+      <div class="sidebar-section">
+        <div class="section-title">
+          <span>Policy Topics</span>
+          <i data-lucide="book-open" class="section-icon"></i>
+        </div>
+        <div class="policy-chips" id="policyChipsContainer">
+          <button class="policy-chip" data-query="What is the leave policy (annual and sick leave)?">
+            <i data-lucide="calendar"></i>
+            <span>Leave & Sick Days</span>
+          </button>
+          <button class="policy-chip" data-query="How many days can I work from home and what are the core hours?">
+            <i data-lucide="home"></i>
+            <span>Work From Home</span>
+          </button>
+          <button class="policy-chip" data-query="What are the maternity, paternity and adoption leave benefits?">
+            <i data-lucide="baby"></i>
+            <span>Parental Leave</span>
+          </button>
+          <button class="policy-chip" data-query="What does our group health insurance cover for employees and dependents?">
+            <i data-lucide="heart-pulse"></i>
+            <span>Health Insurance</span>
+          </button>
+          <button class="policy-chip" data-query="What is the employee referral bonus program amount?">
+            <i data-lucide="gift"></i>
+            <span>Referral Bonus</span>
+          </button>
+          <button class="policy-chip" data-query="What are the rules regarding moonlighting and secondary employment?">
+            <i data-lucide="briefcase"></i>
+            <span>Moonlighting Rules</span>
+          </button>
+          <button class="policy-chip" data-query="What is the notice period and how long does final settlement take?">
+            <i data-lucide="log-out"></i>
+            <span>Exit & Notice Period</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Chat History -->
+      <div class="sidebar-section history-section">
+        <div class="section-title">
+          <span>Recent Conversations</span>
+          <button class="clear-history-icon-btn" id="clearHistoryBtn" title="Clear all history">
+            <i data-lucide="trash-2"></i>
+          </button>
+        </div>
+        <div class="history-list" id="historyList">
+          <div class="history-empty">No previous chats yet</div>
+        </div>
+      </div>
+
+      <!-- Sidebar Footer / System Badge -->
+      <div class="sidebar-footer">
+        <div class="system-status-card">
+          <div class="status-indicator">
+            <span class="pulse-dot"></span>
+            <span class="status-text">System Live (Groq RAG)</span>
+          </div>
+          <div class="status-meta">20 Policy Sections • Qdrant Vector DB</div>
+        </div>
+        <div class="user-profile-row">
+          <div class="user-avatar">
+            <i data-lucide="user"></i>
+          </div>
+          <div class="user-info">
+            <span class="user-name">Acme Employee</span>
+            <span class="user-role">HR Self-Service</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN CHAT CONTAINER -->
+    <main class="chat-main">
+      <!-- TOP NAV BAR -->
+      <header class="top-nav">
+        <div class="nav-left">
+          <button class="icon-btn" id="openSidebarBtn" title="Toggle sidebar">
+            <i data-lucide="panel-left-open"></i>
+          </button>
+          <div class="model-badge">
+            <span class="model-name">HR Assistant</span>
+            <span class="model-version">v2.0 RAG</span>
+            <span class="badge-dot"></span>
+          </div>
+        </div>
+        <div class="nav-right">
+          <button class="nav-action-btn" id="viewHandbookBtn" title="View Handbook Overview">
+            <i data-lucide="file-text"></i>
+            <span>Handbook Summary</span>
+          </button>
+          <button class="icon-btn" id="refreshChatBtn" title="Reset current conversation">
+            <i data-lucide="rotate-ccw"></i>
+          </button>
+        </div>
+      </header>
+
+      <!-- CHAT MESSAGE SCROLL AREA -->
+      <div class="chat-viewport" id="chatViewport">
+        
+        <!-- HERO WELCOME VIEW (Shown when chat is empty) -->
+        <div class="welcome-hero" id="welcomeHero">
+          <div class="hero-logo-wrapper">
+            <div class="hero-logo-glow"></div>
+            <div class="hero-logo-box">
+              <i data-lucide="sparkles" class="hero-icon"></i>
+            </div>
+          </div>
+          <h1 class="hero-title">How can I assist you with HR policies today?</h1>
+          <p class="hero-subtitle">
+            Grounded directly in Acme Corp's Employee Handbook. Ask any question about leave, benefits, working hours, and conduct.
+          </p>
+
+          <!-- PROMPT CARDS -->
+          <div class="prompt-cards-grid">
+            <div class="prompt-card" data-prompt="How many days of paid annual leave do I get, and how many days can be carried forward?">
+              <div class="card-icon-wrap"><i data-lucide="palmtree"></i></div>
+              <div class="card-content">
+                <div class="card-title">Annual Leave & Carry Over</div>
+                <div class="card-desc">Check your paid leave balance rules & carry-forward caps</div>
+              </div>
+            </div>
+
+            <div class="prompt-card" data-prompt="What is the work from home policy, core working hours, and weekly limit?">
+              <div class="card-icon-wrap"><i data-lucide="laptop"></i></div>
+              <div class="card-content">
+                <div class="card-title">Work From Home Rules</div>
+                <div class="card-desc">Remote limits, approvals & core collaboration hours</div>
+              </div>
+            </div>
+
+            <div class="prompt-card" data-prompt="What are the maternity and paternity leave benefits for parents?">
+              <div class="card-icon-wrap"><i data-lucide="heart"></i></div>
+              <div class="card-content">
+                <div class="card-title">Maternity & Paternity Leave</div>
+                <div class="card-desc">26 weeks maternity, paternity & adoption entitlements</div>
+              </div>
+            </div>
+
+            <div class="prompt-card" data-prompt="What are the details of our group health insurance and wellness checkup allowance?">
+              <div class="card-icon-wrap"><i data-lucide="shield-check"></i></div>
+              <div class="card-content">
+                <div class="card-title">Health & Medical Benefits</div>
+                <div class="card-desc">Hospitalization coverage, wellness allowances & EAP</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MESSAGE STREAM (Appended dynamically) -->
+        <div class="messages-container" id="messagesContainer"></div>
+
+        <!-- TYPING / SEARCHING INDICATOR -->
+        <div class="typing-indicator-row" id="typingIndicator">
+          <div class="assistant-avatar">
+            <i data-lucide="sparkles"></i>
+          </div>
+          <div class="typing-bubble">
+            <div class="typing-dots">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <span class="typing-status" id="typingStatusText">Searching HR policy handbook...</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- BOTTOM INPUT CONTAINER -->
+      <div class="chat-input-wrapper">
+        <div class="chat-input-box">
+          <textarea 
+            id="userInput" 
+            rows="1" 
+            placeholder="Ask anything about company HR policies..."
+            autocomplete="off"
+            spellcheck="false"
+          ></textarea>
+          <button id="sendBtn" class="send-btn" disabled title="Send message (Enter)">
+            <i data-lucide="arrow-up"></i>
+          </button>
+        </div>
+        <div class="input-disclaimer">
+          HR Assistant answers are retrieved from Acme Corp's Employee Handbook (v2.0). Verify official exceptions with HR.
+        </div>
+      </div>
+    </main>
+
+  </div>
+
+  <!-- HANDBOOK OVERVIEW MODAL -->
+  <div class="modal-backdrop" id="handbookModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <i data-lucide="book-open"></i>
+          <h3>Acme Corp HR Policy Handbook (20 Sections)</h3>
+        </div>
+        <button class="icon-btn" id="closeModalBtn"><i data-lucide="x"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="policy-index-grid">
+          <div class="policy-item"><strong>1. Leave Policy:</strong> 20 annual days, 10 sick days, max 5 carry forward</div>
+          <div class="policy-item"><strong>2. Work From Home:</strong> Up to 2 days/wk, core hours 10 AM - 4 PM</div>
+          <div class="policy-item"><strong>3. Probation Period:</strong> 3 months review, emergency unpaid leave</div>
+          <div class="policy-item"><strong>4. Notice Period:</strong> 30 days standard, 15 days in probation</div>
+          <div class="policy-item"><strong>5. Reimbursements:</strong> Submit within 30 days with valid receipts</div>
+          <div class="policy-item"><strong>6. Code of Conduct:</strong> Professionalism, zero harassment tolerance</div>
+          <div class="policy-item"><strong>7. Holidays:</strong> 12 annual public holidays, compensatory off</div>
+          <div class="policy-item"><strong>8. Exit Policy:</strong> IT, Finance & HR clearance, 45-day final settlement</div>
+          <div class="policy-item"><strong>9. Parental Leave:</strong> 26 wks maternity, 2 wks paternity, 12 wks adoption</div>
+          <div class="policy-item"><strong>10. Bereavement:</strong> 5 days immediate family, 2 days extended</div>
+          <div class="policy-item"><strong>11. Health Insurance:</strong> $50,000 coverage, $200 wellness, 24/7 EAP</div>
+          <div class="policy-item"><strong>12. Working Hours:</strong> 40 hrs/wk, 9 AM - 6 PM, 1.5x overtime rate</div>
+          <div class="policy-item"><strong>13. Learning & Certs:</strong> $1,000 annual professional training allowance</div>
+          <div class="policy-item"><strong>14. Appraisals:</strong> Bi-annual reviews (June/Dec), 60-day PIP</div>
+          <div class="policy-item"><strong>15. Dress Code:</strong> Smart casual Mon-Thu, casual Fri, business formal for clients</div>
+          <div class="policy-item"><strong>16. IT Assets & Cyber:</strong> MFA required, 2-hr lost device notification</div>
+          <div class="policy-item"><strong>17. Anti-Harassment:</strong> POSH Internal Complaints Committee, 90-day inquiry</div>
+          <div class="policy-item"><strong>18. Moonlighting:</strong> Secondary commercial employment strictly prohibited</div>
+          <div class="policy-item"><strong>19. Business Travel:</strong> Economy flights, $75/day meal per diem allowance</div>
+          <div class="policy-item"><strong>20. Referral Bonus:</strong> $1,000 junior-mid roles, $2,500 senior roles</div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="primary-btn" id="modalUnderstoodBtn">Got it</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom App JS -->
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
